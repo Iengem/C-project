@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Runtime.InteropServices;
 /*{
     Console.Write("Enter your score: ");
@@ -421,12 +422,169 @@ class bag
 
 
 
-
-
-
-  private static void Main(String[] args)
+    static void Strings()
     {
+        string name = "Gaadi";
+        char[] characters = { 'G', 'a', 'a', 'd', 'i' };
+        string newName = new string(characters);
+        Console.WriteLine(newName);
+    }
 
-        vertical();
+    static string name()
+    {
+        Console.WriteLine("Enter your firstname: ");
+        string firstname = Console.ReadLine();
+        Console.WriteLine("Enter your lastname: ");
+        string lastname = Console.ReadLine();
+        string result = string.Format("{0} {1}", firstname, lastname);
+        return "Thanks " + result + " for contacting us";
+    }
+
+    static void textInfo()
+    {
+        TextInfo CurrentTextInfo = CultureInfo.CurrentCulture.TextInfo;
+        string message = "God is the Greatest";
+        string result = CurrentTextInfo.ToTitleCase(message);
+        
+    }
+
+    static void task()
+    {
+        Console.WriteLine("Enter a name: ");
+        string name = Console.ReadLine();
+        string[] resultName = new string[name.Length];
+
+        for(int i = 0; i<name.Length; i++)
+        {
+            Char current = name[i];
+            string name1 = current.ToString();
+            if(name1 == name1.ToUpper())
+            {
+                resultName[i] = name1.ToLower();
+            }
+            else
+            {
+                resultName[i] = name1.ToUpper();
+            }
+            
+        }
+        for(int i =0; i<resultName.Length; i++)
+        {
+            string letter = resultName[i];
+            Console.Write(letter);
+        }
+    }
+
+
+    static void winner()
+    {
+        Console.WriteLine("Enter a string below: ");
+        string word = Console.ReadLine();
+        int upper = 0;
+        int lower = 0;
+        for(int i = 0; i<word.Length; i++) {
+            Char letter = word[i];
+            string letter1 = letter.ToString();
+            if(letter1 == letter1.ToUpper())
+            {
+                upper += 1;
+            }
+            else
+            {
+                lower += 1;
+            }
+        }
+
+        if(upper > lower){
+            Console.WriteLine("Uppercase is the winner");
+
+        }
+        else if(lower > upper)
+        {
+            Console.WriteLine("Lowercase is the winner");
+        }
+        else
+        {
+            Console.WriteLine("Its a draw");
+        }
+    }
+
+    static void joinSplit()
+    {
+        int[] ages = new int[] { 17, 20, 30, 50 };
+        string result = String.Join(",", ages); 
+
+        string name = "Mike, Jedi, Gaadi";
+        string[] namearr = name.Split(",");
+        Array.ForEach(namearr, x => Console.WriteLine(x));
+        Console.WriteLine(namearr);
+    }
+
+
+    //    Classwork
+    static void Dash()
+    {
+        Console.WriteLine("Enter a string below: ");
+        string word = Console.ReadLine();
+        TextInfo currentTextInfo = CultureInfo.CurrentCulture.TextInfo;
+        string[] wordArr = new string[word.Length];
+        string[] finishedArr = new string[word.Length];
+        Char[] currentWord;
+        string finishedString = "";
+        string result = "";
+        string firstUpper = "";
+
+        if (word.Contains("_"))
+        {
+            wordArr = word.Split("_");
+            for (int i = 1; i < wordArr.Length; i++)
+            {
+                string current = wordArr[i];
+                currentWord = current.ToCharArray();
+                string firstWord = wordArr[0];
+                char otherfirstLetters = currentWord[0];
+                string otherfirstLettersString = otherfirstLetters.ToString();
+
+                char firstLetter = wordArr[0][0];
+                string firstLetterString = firstLetter.ToString();
+
+                
+                firstUpper = firstLetterString.ToUpper() == firstLetterString? currentTextInfo.ToTitleCase(firstWord): firstWord;
+                string otherUpper = otherfirstLettersString.ToUpper() == otherfirstLettersString ? currentTextInfo.ToTitleCase(current) : currentTextInfo.ToTitleCase(current);
+
+                result += otherUpper;
+                
+            }
+            finishedString = firstUpper + result;
+        }
+        if (word.Contains("-"))
+        {
+            wordArr = word.Split("-");
+            for (int i = 1; i < wordArr.Length; i++)
+            {
+                string current = wordArr[i];
+                currentWord = current.ToCharArray();
+                string firstWord = wordArr[0];
+                char otherfirstLetters = currentWord[0];
+                string otherfirstLettersString = otherfirstLetters.ToString();
+
+                char firstLetter = wordArr[0][0];
+                string firstLetterString = firstLetter.ToString();
+
+
+                firstUpper = firstLetterString.ToUpper() == firstLetterString ? currentTextInfo.ToTitleCase(firstWord) : firstWord;
+                string otherUpper = otherfirstLettersString.ToUpper() == otherfirstLettersString ? currentTextInfo.ToTitleCase(current) : currentTextInfo.ToTitleCase(current);
+
+                result += otherUpper;
+
+            }
+            finishedString = firstUpper + result;
+        }
+        Console.WriteLine(finishedString);
+    }
+
+    private static void Main(String[] args)
+    {
+        Dash();        
     }
 }
