@@ -1,149 +1,152 @@
 ﻿using System;
+using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Security;
+using System.Xml;
 /*{
-    Console.Write("Enter your score: ");
-    int score =  Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter your score: ");
+int score =  Convert.ToInt32(Console.ReadLine());
 
-    switch (score)
-    {
-        case 100:
-        case 90:
-        case 80:
-        case 75:
-            Console.WriteLine("Your grade is A");
-            break;
-        case 70:
-            Console.WriteLine("Your grade is B");
-            break;
-        case 60:
-            Console.WriteLine("Your grade is C");
-            break;
-        case 50:
-            Console.WriteLine("Your grade is D");
-            break;
-        case <=40:
-            Console.WriteLine("Your grade is F");
-            break;
-        default:
-            Console.WriteLine("Enter a valid score");
-            break;
-    }
-
-
+switch (score)
+{
+case 100:
+case 90:
+case 80:
+case 75:
+Console.WriteLine("Your grade is A");
+break;
+case 70:
+Console.WriteLine("Your grade is B");
+break;
+case 60:
+Console.WriteLine("Your grade is C");
+break;
+case 50:
+Console.WriteLine("Your grade is D");
+break;
+case <=40:
+Console.WriteLine("Your grade is F");
+break;
+default:
+Console.WriteLine("Enter a valid score");
+break;
+}
 
 
-    //Equation = xsquared - 5x + 6;
-    int a = Convert.ToInt32(Console.ReadLine());
-    int b = Convert.ToInt32(Console.ReadLine());
-    int c = Convert.ToInt32(Console.ReadLine());
-    double d = Math.Pow(b, 2) - 4 * a * c;
-    int e = (int)Math.Sqrt(d);
-    int x1 = (-b + e)/ 2*a;
-    int x2 = (-b - e)/2*a;
-    Console.WriteLine(x1);
-    Console.WriteLine(x2);
 
-    int sum = 0;
 
-    for(int i = 1; i<=10; i+=2){
-        sum = sum +i;
-    }
+//Equation = xsquared - 5x + 6;
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+double d = Math.Pow(b, 2) - 4 * a * c;
+int e = (int)Math.Sqrt(d);
+int x1 = (-b + e)/ 2*a;
+int x2 = (-b - e)/2*a;
+Console.WriteLine(x1);
+Console.WriteLine(x2);
 
-    Console.WriteLine(sum);
-    for (int i = 1; i<=3; i++)
-       {
-           for(int j = 1; j<=3; j++) {
-               Console.WriteLine(i + "" + j);
-           }
-       }
+int sum = 0;
 
-    int i = 1;
-    int sum = 0;
-    while(i<=10)
-    {
-        if(i % 2 != 0)
-        {
-            sum = (i * i) + sum;
-            
-        }
-        i++;
-    }
-    Console.WriteLine(sum);
+for(int i = 1; i<=10; i+=2){
+sum = sum +i;
+}
 
-    while (i <= 3)
-    {
-        int j = 1;
-        while (j <= 3)
-        {
-            Console.WriteLine(i +  " " + j);    
-            j++;    
-        }
-        i++;
-    }
+Console.WriteLine(sum);
+for (int i = 1; i<=3; i++)
+{
+for(int j = 1; j<=3; j++) {
+Console.WriteLine(i + "" + j);
+}
+}
 
-    do
-    {
-        Console.WriteLine(i);
-        i++;
-    } while (i < 10);
+int i = 1;
+int sum = 0;
+while(i<=10)
+{
+if(i % 2 != 0)
+{
+sum = (i * i) + sum;
 
-    do
-    {
-        int j = 1;
-        do
-        {
-            Console.WriteLine(i + " " + j);
-            j++;
-        } while (j <= 3);
-        i++;
-    } while (i <= 3);
+}
+i++;
+}
+Console.WriteLine(sum);
 
-    do
-    {
-        int choice = 0;
+while (i <= 3)
+{
+int j = 1;
+while (j <= 3)
+{
+Console.WriteLine(i +  " " + j);    
+j++;    
+}
+i++;
+}
 
-        Console.WriteLine("Please select an option:");
-        Console.WriteLine("1. Deposit");
-        Console.WriteLine("2. Withdrawal");
-        Console.WriteLine("3. Inquiry");
-        Console.WriteLine("4. Airtime");
-        Console.WriteLine("5. Data");
-        Console.WriteLine("6. Exit");
+do
+{
+Console.WriteLine(i);
+i++;
+} while (i < 10);
 
-        if (int.TryParse(Console.ReadLine(), out choice))
-        {
-            switch (choice)
-            {
-                case 1:
-                    Console.WriteLine("Congratulations, you have successfully chosen the deposit option\n");
-                    break;
-                case 2:
-                    Console.WriteLine("Congratulations, you have successfully chosen the withdrawal option\n");
-                    break;
-                case 3:
-                    Console.WriteLine("Congratulations, you have successfully chosen the Inquiry option\n");
-                    break;
-                case 4:
-                    Console.WriteLine("Congratulations, you have successfully chosen the Airtime option\n");
-                    break;
-                case 5:
-                    Console.WriteLine("Congratulations, you have successfully chosen the Data option\n");
-                    break;
-                case 6:
-                    Console.WriteLine("You have successfully exited the menu");
-                    return;
-                default:
-                    Console.WriteLine("Enter a valid option\n");
-                    break;
-            }
-        }
-        else
-        {
-            Console.WriteLine("Invalid input. Please enter a valid numeric option.\n");
-        }
-    } while (true);
+do
+{
+int j = 1;
+do
+{
+Console.WriteLine(i + " " + j);
+j++;
+} while (j <= 3);
+i++;
+} while (i <= 3);
+
+do
+{
+int choice = 0;
+
+Console.WriteLine("Please select an option:");
+Console.WriteLine("1. Deposit");
+Console.WriteLine("2. Withdrawal");
+Console.WriteLine("3. Inquiry");
+Console.WriteLine("4. Airtime");
+Console.WriteLine("5. Data");
+Console.WriteLine("6. Exit");
+
+if (int.TryParse(Console.ReadLine(), out choice))
+{
+switch (choice)
+{
+case 1:
+Console.WriteLine("Congratulations, you have successfully chosen the deposit option\n");
+break;
+case 2:
+Console.WriteLine("Congratulations, you have successfully chosen the withdrawal option\n");
+break;
+case 3:
+Console.WriteLine("Congratulations, you have successfully chosen the Inquiry option\n");
+break;
+case 4:
+Console.WriteLine("Congratulations, you have successfully chosen the Airtime option\n");
+break;
+case 5:
+Console.WriteLine("Congratulations, you have successfully chosen the Data option\n");
+break;
+case 6:
+Console.WriteLine("You have successfully exited the menu");
+return;
+default:
+Console.WriteLine("Enter a valid option\n");
+break;
+}
+}
+else
+{
+Console.WriteLine("Invalid input. Please enter a valid numeric option.\n");
+}
+} while (true);
 }*/
 
 
@@ -171,7 +174,8 @@ class Mathematics
 }
 class bag
 {
-    static void printMin() {
+    static void printMin()
+    {
         int[] arr = { 1, 2, 3, 4 };
         int min = arr[0];
 
@@ -199,7 +203,8 @@ class bag
         Console.WriteLine("The sum of the even numbers is " + sum);
 
     }
-    static String winner(int[] x) {
+    static String winner(int[] x)
+    {
         int even = 0;
         int odd = 0;
         for (int i = 0; i < x.Length; i++)
@@ -218,7 +223,8 @@ class bag
         {
             return "Even is the winner";
         }
-        else if (odd > even) {
+        else if (odd > even)
+        {
             return "Odd is the winner";
         }
         else
@@ -361,7 +367,7 @@ class bag
         string[] subjects = new string[subSize];
         int[,] scores = new int[size, subSize];
 
-        
+
         for (int j = 0; j < subSize; j++)
         {
             Console.WriteLine();
@@ -370,7 +376,7 @@ class bag
             subjects[j] = subject;
         }
 
-        
+
         for (int i = 0; i < size; i++)
         {
             Console.WriteLine("Input student name: ");
@@ -384,7 +390,7 @@ class bag
             }
         }
 
-        
+
         Console.WriteLine();
         Console.Write("".PadRight(15));
 
@@ -395,7 +401,7 @@ class bag
 
         Console.WriteLine();
 
-        
+
         for (int i = 0; i < size; i++)
         {
             Console.Write(students[i].PadRight(15));
@@ -413,7 +419,7 @@ class bag
     {
         int[] array = { 1, 2, 3 };
 
-        for(int i = 0; i<array.Length; i++)
+        for (int i = 0; i < array.Length; i++)
         {
             int current = array[i];
             Console.WriteLine(current);
@@ -445,7 +451,7 @@ class bag
         TextInfo CurrentTextInfo = CultureInfo.CurrentCulture.TextInfo;
         string message = "God is the Greatest";
         string result = CurrentTextInfo.ToTitleCase(message);
-        
+
     }
 
     static void task()
@@ -454,11 +460,11 @@ class bag
         string name = Console.ReadLine();
         string[] resultName = new string[name.Length];
 
-        for(int i = 0; i<name.Length; i++)
+        for (int i = 0; i < name.Length; i++)
         {
             Char current = name[i];
             string name1 = current.ToString();
-            if(name1 == name1.ToUpper())
+            if (name1 == name1.ToUpper())
             {
                 resultName[i] = name1.ToLower();
             }
@@ -466,9 +472,9 @@ class bag
             {
                 resultName[i] = name1.ToUpper();
             }
-            
+
         }
-        for(int i =0; i<resultName.Length; i++)
+        for (int i = 0; i < resultName.Length; i++)
         {
             string letter = resultName[i];
             Console.Write(letter);
@@ -482,10 +488,11 @@ class bag
         string word = Console.ReadLine();
         int upper = 0;
         int lower = 0;
-        for(int i = 0; i<word.Length; i++) {
+        for (int i = 0; i < word.Length; i++)
+        {
             Char letter = word[i];
             string letter1 = letter.ToString();
-            if(letter1 == letter1.ToUpper())
+            if (letter1 == letter1.ToUpper())
             {
                 upper += 1;
             }
@@ -495,11 +502,12 @@ class bag
             }
         }
 
-        if(upper > lower){
+        if (upper > lower)
+        {
             Console.WriteLine("Uppercase is the winner");
 
         }
-        else if(lower > upper)
+        else if (lower > upper)
         {
             Console.WriteLine("Lowercase is the winner");
         }
@@ -512,7 +520,7 @@ class bag
     static void joinSplit()
     {
         int[] ages = new int[] { 17, 20, 30, 50 };
-        string result = String.Join(",", ages); 
+        string result = String.Join(",", ages);
 
         string name = "Mike, Jedi, Gaadi";
         string[] namearr = name.Split(",");
@@ -548,12 +556,12 @@ class bag
                 char firstLetter = wordArr[0][0];
                 string firstLetterString = firstLetter.ToString();
 
-                
-                firstUpper = firstLetterString.ToUpper() == firstLetterString? currentTextInfo.ToTitleCase(firstWord): firstWord;
+
+                firstUpper = firstLetterString.ToUpper() == firstLetterString ? currentTextInfo.ToTitleCase(firstWord) : firstWord;
                 string otherUpper = otherfirstLettersString.ToUpper() == otherfirstLettersString ? currentTextInfo.ToTitleCase(current) : currentTextInfo.ToTitleCase(current);
 
                 result += otherUpper;
-                
+
             }
             finishedString = firstUpper + result;
         }
@@ -583,8 +591,194 @@ class bag
         Console.WriteLine(finishedString);
     }
 
-    private static void Main(String[] args)
+    static void palindrome()
     {
-        Dash();        
+        bool option = true;
+        do
+        {
+            Console.WriteLine("Enter a String below: ");
+            Console.WriteLine(output());
+            Console.WriteLine("Do you want to go again?");
+            Console.WriteLine("Enter a Y or N");
+            string choice = Console.ReadLine();
+            string choiceLowered = choice.ToLower();
+            char choiceLoweredLetter = choiceLowered[0];
+            option = choiceLoweredLetter == 'y' ? true : false;
+
+        } while (option);
+
+    }
+
+    static String output()
+    {
+        string word = Console.ReadLine();
+        string lower = word.ToLower();
+        string reversedString = "";
+
+        for (int i = word.Length; i > 0; i--)
+        {
+            char currentLetter = lower[i - 1];
+            reversedString += currentLetter;
+        }
+        if (lower == reversedString)
+        {
+            return "True";
+        }
+        else
+        {
+            return "False";
+        }
+    }
+    //solid principles in programming
+    //KISS AND DRY
+
+    static void List()
+    {
+        bool choice = true;
+        var tasksList = new List<String>();
+        TextInfo currentTextInfo = CultureInfo.CurrentCulture.TextInfo;
+        int number = 0;
+        do
+        {
+            Console.WriteLine("Input task to be displayed:  ");
+            string tasks = Console.ReadLine();
+            tasksList.Add(tasks);
+            Console.WriteLine("Do you want to input more?(Yes or No) ");
+            string option = Console.ReadLine();
+            string optionLowered = option.ToLower();
+            choice = optionLowered[0] == 'y' ? true : false;
+
+            Console.WriteLine(" ");
+            if (choice == false)
+            {
+                Console.WriteLine("Your tasks for today are as follows: ");
+                foreach (var task in tasksList)
+                {
+                    number += 1;
+                    Console.WriteLine(number + ". " + currentTextInfo.ToTitleCase(task).Trim());
+                }
+            }
+        } while (choice);
+    }
+
+    static void hashSet()
+    {
+        var products = new HashSet<String>();
+        products.Add("Fanta");
+        products.Add("Laptop");
+        products.Add("Chair");
+        products.Add("Fanta");
+        products.Remove("Fanta");
+
+        foreach (var item in products)
+        {
+            Console.WriteLine(item);
+
+        }
+    }
+
+    static void sortedSet()
+    {
+        var cities = new SortedSet<String>();
+        cities.Add("Lagos");
+        cities.Add("Abuja");
+        cities.Add("Kano");
+        cities.Add("Accra");
+        foreach (var item in cities)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
+
+    static void stack()
+    {
+        var item = new Stack<string>();
+        item.Push("Iwasen");
+        item.Push("Godrice");
+        item.Push("Hodovai");
+        item.Push("Iengem");
+        item.Push("Iwasen");
+        item.Push("Munachi");
+        foreach (var name in item)
+        {
+            Console.WriteLine(name);
+        }
+    }
+    static void queue()
+    {
+        Queue<string> cities = new Queue<string>();
+
+        cities.Enqueue("Ibadan");
+        cities.Enqueue("Lagos");
+        cities.Enqueue("Port-Harcourt");
+        cities.Enqueue("Lokoja");
+        cities.Enqueue("Ibadan");
+        cities.Enqueue("Ibadan");
+
+
+        foreach (var city in cities)
+        {
+            Console.WriteLine(city);
+        }
+
+    }
+
+    static void LinkedList()
+    {
+        var subjects = new LinkedList<string>();
+        subjects.AddLast("Physics");
+        subjects.AddLast("Biology");
+        subjects.AddLast("Chemistry");
+
+        LinkedListNode<string> node = subjects.Find("Biology");
+        subjects.AddBefore(node, "Mathematics");
+        subjects.AddBefore(node, "English");
+
+        foreach (var item in subjects)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
+
+    static void Dictionary()
+    {
+        Dictionary<string, string> states = new Dictionary<string, string>();
+        states.Add("Rivers", "Port Harcourt");
+        states.Add("Osun", "Osogbo");
+        states.Add("Lagos", "Ikeja");
+
+        foreach (KeyValuePair<string, string> item in states)
+        {
+            Console.WriteLine(item.Key + " " + item.Value);
+        }
+
+    }
+
+    public class Employee
+    {
+        public int id;
+        public string name;
+        public float flag;
+        public float salary;
+
+
+        public Employee(int id, string name, float salary)
+        {
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+        public static void Main(string[] args)
+        {
+
+            Employee emp = new Employee(1, "John", 50000.0f);
+
+
+            Console.WriteLine(emp.flag);
+        }
     }
 }
+
